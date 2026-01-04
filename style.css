@@ -1,0 +1,243 @@
+@import url('https://fonts.cdnfonts.com/css/young-serif');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Young Serif', serif;
+}
+
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #10dbff, #c0ffff, #ffff69);
+  padding: 20px;
+}
+
+.wrapper {
+    width: 700px;
+    padding: 40px;
+    background: #000000;
+    border-radius: 10px;
+    box-shadow: #462e9e;
+}
+
+
+.stats {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.stat-box {
+  flex: 1 1 45%;
+  margin: 10px;
+  padding: 15px;
+  background: #a448f0;
+  border: 2px solid #10dbff;
+  border-radius: 8px;
+  color: #10dbff;
+  font-size: 1.2rem;
+}
+
+#paragraph {
+  margin: 20px 0;
+  color: rgb(252, 167, 255);
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+.result-details{
+  color: rgb(247, 247, 247);
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+::selection{
+  color: bisque;
+  background: #10dbff;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 1rem;
+  background: #10dbff;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+button:hover {
+  background: #0ac0e0;
+  box-shadow: 0 0 10px #10dbff;
+}
+.wrapper .input-field{
+    opacity: 0;
+    z-index: -999;
+    position: absolute;
+}
+.wrapper .content-box{
+    padding:15px 23px 0;
+    border-radius: 10px;
+    border: 4px solid rgb(82, 128, 255);
+
+}
+
+.content-box .typing-text{
+    overflow: hidden;
+    max-height: 260px;
+
+}
+.typing-text ::-webkit-scrollbar{
+    width:0;
+}
+.typing-text p{
+    font-size: 21px;
+    text-align:justify ;
+    letter-spacing: 1px;
+    word-break: break-all;
+}
+.typing-text p span{
+    position: relative;
+
+}
+.typing-text p span.correct{
+    color: #0ac0e0;
+}
+.typing-text p span.incorrect{
+    color: #ff4141;
+    border-radius: 4px;
+}
+.typing-text p span.active::before{
+    position: absolute;
+    content: " ";
+    height: 1.5px;
+    width: 100%;
+    bottom: 1px;
+    left: 0;
+    opacity: 0;
+    border-radius: 5px;
+    background :#0ac0e0;
+    animation: blink 1s ease-in-out infinite;
+}
+@keyframes blink{
+    50%
+    {
+        opacity: 1;
+    }
+}
+.content-box .content{
+    margin-top: 17px;
+    display: flex;
+    padding: 12px 0;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid #0ac0e0;
+}
+.content button{
+    outline: none;
+    border: none;
+    width: 105px;
+    color: #0ac0e0;
+    padding: 8px 0;
+    font: size 17px;
+    font-weight: 600;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 3px solid #0ac0e0;
+    background: none;
+    transition: transform 0.2s ease;
+
+}
+.content button:active{
+    transform: scale(0.89);
+}
+.content button:hover{
+    background: wheat;
+}
+.content .result-details{
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: calc(100% - 140px);
+    justify-content: space-between;
+}
+.result-details li{
+    display: flex;
+    height: 20px;
+    list-style: none;
+    position: relative;
+    align-items: center;
+}
+.result-details li:not(:first-child){
+    padding: 22px;
+    border-left: 2px solid #c0ffff;
+}
+.result-details li p{
+    font-size:13px;
+
+}
+.result-details li p{
+    font-size:13px;
+}
+.result-details li span{
+    display: block;
+    font-size: 13px;
+    margin-left: 10px;
+}
+li span b{
+    font-weight: 500;
+}
+li:not(:first-child)span{
+    font-weight: 500;
+}
+li:not(:first-child)span{
+    font-weight: 500;
+}
+@media(max-width :745px){
+    .wrapper{
+        padding: 20px;
+    }
+    .content-box .content{
+        padding: 20px 0;
+    }
+    .content-box .typing-text{
+        max-height: 100%;
+    }
+    .typing-text p{
+        font-size: 19px;
+        text-align: left;
+    }
+    .content button{
+        width: 100%;
+        font-size: 15px;
+        padding: 10px 0;
+        margin-top: 20px;
+    }
+    .content .result-details{
+        width: 100%;
+    }
+    
+    .result-details li{
+        margin-bottom:10px;
+    }
+    #musicToggle {
+  background: #222;
+  color: #fff;
+  border: 2px solid #ff77aa;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+#musicToggle:hover {
+  background: #ff77aa;
+  color: #222;
+}
+
+}
